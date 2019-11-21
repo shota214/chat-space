@@ -2,8 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|
-|image|string|
+|body|text|null: false|
+|image|string|null: false|
 |group|integer|foreignkey: true|
 |user|intege|foreignkey: true|
 |timestamps|----|-------|
@@ -31,12 +31,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|user|references|foreign_key: true|
 |timestamps|----|-------|
 
 ### Association
-- has_many :users
 - has_many :messages
+- has_many :groups_users
+- has_many :users, through: groups_users
 
 ## groups_usersテーブル
 
