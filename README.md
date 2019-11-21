@@ -3,9 +3,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
-|image|string|null: false|
-|group|integer|foreignkey: true|
-|user|intege|foreignkey: true|
+|image|string|
+|group|integer|null: false, foreignkey: true|
+|user|intege|null: false, foreignkey: true|
 |timestamps|----|-------|
 
 ### Association
