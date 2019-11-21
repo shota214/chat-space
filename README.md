@@ -2,7 +2,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |group|integer|null: false, foreignkey: true|
 |user|intege|null: false, foreignkey: true|
