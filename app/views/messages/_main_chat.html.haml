@@ -1,0 +1,33 @@
+.main
+  .main__header
+    .main__header__left
+      .main__header__left__group
+        ネコ
+      .main__header__left__memberList
+        Member:
+        .main__header__left__memberList__member
+          田中
+        .main__header__left__memberList__member
+          鈴木
+    = link_to "#", class:"main__header__edit-btn" do
+      Edit
+  .main__message
+    .main__message__messageBox
+      .main__message__messageBox__info
+        .main__message__messageBox__info__talkingUser
+          田中
+        .main__message__messageBox__info_date
+          2019/11/25(Mon) 12:00:00
+      .main__message__messageBox__message_text
+        こんにちは
+  .main__form
+    .main__form__newMessage
+      .main__form__newMessage__box
+        <input placeholder ="type a message" type="text"
+        class="main__form__newMessage__box__text">
+        %label{class: "main__form__newMessage__box__image_btn"}
+          = icon('far', 'image')
+          .main__form__newMessage__box__imageFile
+            %input{type: "file"}
+      <input type=submit name=commit value=Send class="main__form__newMessage__submit_btn"
+      data-disable-with=Send>
