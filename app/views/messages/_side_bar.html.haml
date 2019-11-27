@@ -4,7 +4,7 @@
       .side__header__contents__user_name
         = current_user.name
       .side__header__contents__create
-        = link_to "#", class: "create_btn" do
+        = link_to new_group_path, class: "create_btn" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "create_btn" do
           = icon('fas', 'cogs')
