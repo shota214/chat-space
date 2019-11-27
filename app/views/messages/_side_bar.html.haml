@@ -10,8 +10,10 @@
           = icon('fas', 'cogs')
 
   .side__contents
-    .side__contents__group
-      .side__contents__group_name
-        ネコ
-      .side__contents__group_newMessage
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side__contents__group
+        = link_to '#' do
+          .side__contents__group_name
+            = group.name
+          .side__contents__group_newMessage
+            まだメッセージがありません
