@@ -1,19 +1,20 @@
 .side
-  .side__header
-    .side__header__contents
-      .side__header__contents__user_name
-        = current_user.name
-      .side__header__contents__create
-        = link_to new_group_path, class: "create_btn" do
-          = icon('far', 'edit')
-        = link_to edit_user_path(current_user), class: "create_btn" do
-          = icon('fas', 'cogs')
+  .header
+    %h3.header__contents
+      = current_user.name
+    %ul.header__lists
+      %li.list
+        = link_to new_group_path do
+          = icon('far', 'edit', class: "create_btn")
+      %li.list
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cogs', class: "create_btn")
 
-  .side__contents
+  .groups
     - current_user.groups.each do |group|
-      .side__contents__group
+      .group
         = link_to group_messages_path(group) do
-          .side__contents__group_name
+          .group__name
             = group.name
-          .side__contents__group_newMessage
+          .group__new-message
             まだメッセージがありません
