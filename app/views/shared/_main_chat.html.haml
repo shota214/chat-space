@@ -23,11 +23,13 @@
   .main__form
     .main__form__newMessage
       .main__form__newMessage__box
-        <input placeholder ="type a message" type="text"
-        class="main__form__newMessage__box__text">
-        %label{class: "main__form__newMessage__box__image_btn"}
-          = icon('far', 'image')
+        .main__form__newMessage__box__text
+          = form_for [@group, @message] do |f|
+            = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .main__form__newMessage__box__image_btn
+          = f.label :image, class: 'main__form__newMessage__box__image_btn_label' do
+            = icon('far', 'image')
           .main__form__newMessage__box__imageFile
-            %input{type: "file"}
-      <input type=submit name=commit value=Send class="main__form__newMessage__submit_btn"
-      data-disable-with=Send>
+            = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'main__form__newMessage__submit_btn'
+
