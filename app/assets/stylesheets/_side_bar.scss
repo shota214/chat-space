@@ -1,54 +1,55 @@
+$white: white;
+$side_blue_dark: #253141;
+$side_header_font: 16px;
+$side_blue_light: #2f3e51;
+$side_group_name: 15px;
+$side_group_message: 11px;
+
 .side {
+  box-sizing: border-box;
+  color: $white;
   width: 300px;
-  height: 100%;
-  color: #ffffff;
   float: left;
-
-  &__header{
-    background-color: #253141;
+  .header {
+    background-color: $side_blue_dark;
     height: 100px;
+    line-height: 100px;
     padding: 0 20px;
-    align-items: center;
-    line-height: 50px;
-    display: flex;
-
-    &__contents{
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-      &__user_name{
-    font-size: 16px;
-    font-weight: bold;
+    &__contents {
+      display: inline-block;
+      font-size: $side_header_font;
+      font-weight: bold;
     }
-   }
+    &__lists {
+      display: inline-block;
+      float: right;
+      padding: 0;
+      .list {
+        display: inline-block;
+      }
+      .create_btn {
+        color: $white;
+        font-size: $side_header_font;
+      }
+    }
   }
-}
 
-.create_btn{
-  color: white;
-}
-
-.side__contents{
-  background-color: #2f3e51;
-  padding: 20px 20px 0;
-  height: calc(100vh - 120px);
-
-  &__group{
-    padding-bottom: 40px;
-
-    &_name{
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: white;
+  .groups {
+    background-color: $side_blue_light;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .group {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name {
+        color: $white;
+        font-size: $side_group_name;
+      }
+      &__new-message {
+        color: $white;
+        font-size: $side_group_message;
+        margin-top: 5px;
+      }
     }
-
-    &_newMessage{
-    font-size: 11px;
-    font-weight: bold;
-    color: white;
-    }
- }
+  }
 }

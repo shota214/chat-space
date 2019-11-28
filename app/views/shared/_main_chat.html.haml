@@ -1,35 +1,25 @@
-.main
-  .main__header
-    .main__header__left
-      .main__header__left__group
+.chat
+  .header
+    .left-header
+      .left-header__title
         ネコ
-      .main__header__left__memberList
+      .left-header__members
         Member:
-        .main__header__left__memberList__member
+        .member
           田中
-        .main__header__left__memberList__member
+        .member
           鈴木
-    = link_to "#", class:"main__header__edit-btn" do
-      Edit
-  .main__message
-    .main__message__messageBox
-      .main__message__messageBox__info
-        .main__message__messageBox__info__talkingUser
-          田中
-        .main__message__messageBox__info_date
-          2019/11/25(Mon) 12:00:00
-      .main__message__messageBox__message_text
-        こんにちは
-  .main__form
-    .main__form__newMessage
-      .main__form__newMessage__box
-        .main__form__newMessage__box__text
-          = form_for [@group, @message] do |f|
-            = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .main__form__newMessage__box__image_btn
-          = f.label :image, class: 'main__form__newMessage__box__image_btn_label' do
-            = icon('far', 'image')
-          .main__form__newMessage__box__imageFile
-            = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'main__form__newMessage__submit_btn'
+    .right-header
+      = link_to "#", class:"right-header__edit-btn" do
+        Edit
+  .messages
+    = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('far', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
 
