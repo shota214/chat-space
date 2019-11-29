@@ -2,15 +2,15 @@
   .header
     .left-header
       .left-header__title
-        ネコ
+        = @group.name
       .left-header__members
         Member:
         .member
-          田中
-        .member
-          鈴木
+          - @group.users.each do |user|
+            = user.name
+
     .right-header
-      = link_to "#", class:"right-header__edit-btn" do
+      = link_to edit_group_path(@group), class:"right-header__edit-btn" do
         Edit
   .messages
     = render @messages
