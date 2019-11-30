@@ -58,3 +58,13 @@ group :development, :test, :production do
 end
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :development, :test do
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'rails-controller-testing'
+end
+
+group :test do
+  gem 'faker'
+end
