@@ -44,6 +44,7 @@ $(function(){
     
     .fail(function(){
       alert('messageか画像を入力してください')
+      $('.form__submit').prop('disabled', false);
     });
   });
 
